@@ -345,7 +345,7 @@ namespace tinyply
 			}
 		}
 
-	private:
+	protected:
 
 		size_t skip_property_binary(const PlyProperty & property, std::istream & is);
 		void skip_property_ascii(const PlyProperty & property, std::istream & is);
