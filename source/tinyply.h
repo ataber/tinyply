@@ -70,11 +70,11 @@ namespace tinyply
 
 		PlyProperty(std::istream & is);
 		PlyProperty(Type type, const std::string & name) : propertyType(type), isList(false), name(name) {}
-		PlyProperty(Type list_type, Type prop_type, const std::string & name, int listCount) : listType(list_type), propertyType(prop_type), isList(true), name(name), listCount(listCount) {}
+		PlyProperty(Type list_type, Type prop_type, const std::string & name, uint8_t listCount) : listType(list_type), propertyType(prop_type), isList(true), name(name), listCount(listCount) {}
 
 		Type listType, propertyType;
 		bool isList;
-		int listCount = 0;
+		uint8_t listCount = 0;
 		std::string name;
 	};
 
@@ -313,7 +313,7 @@ namespace tinyply
 		}
 
 		template<typename T>
-		void add_properties_to_element(const std::string & elementKey, const std::vector<std::string> & propertyKeys, std::vector<T> & source, const int listCount = 1, const PlyProperty::Type listType = PlyProperty::Type::INVALID)
+		void add_properties_to_element(const std::string & elementKey, const std::vector<std::string> & propertyKeys, std::vector<T> & source, const uint8_t listCount = 1, const PlyProperty::Type listType = PlyProperty::Type::INVALID)
 		{
 			auto cursor = std::make_shared<DataCursor>();
 			cursor->offset = 0;
