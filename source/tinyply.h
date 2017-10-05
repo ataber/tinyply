@@ -313,7 +313,7 @@ namespace tinyply
 		}
 
 		template<typename T>
-		void add_properties_to_element(const std::string & elementKey, const std::vector<std::string> & propertyKeys, std::vector<T> & source, const int listCount = 1, const PlyProperty::Type listType = PlyProperty::Type::INVALID)
+		void add_properties_to_element(const std::string & elementKey, const std::vector<std::string> & propertyKeys, std::vector<T> & source, const uint8_t listCount = 1, const PlyProperty::Type listType = PlyProperty::Type::INVALID)
 		{
 			auto cursor = std::make_shared<DataCursor>();
 			cursor->offset = 0;
